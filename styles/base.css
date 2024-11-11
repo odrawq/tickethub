@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "base";
+    src: url("../fonts/base.ttf");
+}
+
+@font-face {
+    font-family: "menu";
+    src: url("../fonts/menu.ttf");
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(35, 35, 50);
+}
+
+#preloader {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    display: flex;
+}
+
+#spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(140, 140, 255, 0.1);
+    border-top: 5px solid rgb(140, 140, 255);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+#menu-display-toggle-button {
+    z-index: 2;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/menu-icon.png");
+    background-size: cover;
+    position: fixed;
+    cursor: pointer;
+}
+
+#menu-display-toggle-button:hover {
+    opacity: 0.5;
+}
+
+#menu-display-toggle-button:active {
+    transform: scale(0.9);
+}
+
+#menu {
+    z-index: 3;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(15, 15, 25);
+    flex-direction: column;
+    position: fixed;
+    display: flex;
+}
+
+#menu .link {
+    font-family: "menu";
+    font-size: 15pt;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+#menu .link:hover {
+    transform: translateX(5px);
+    background-color: rgba(140, 140, 255, 0.1);
+}
+
+#menu .link:active {
+    transform: scale(0.95);
+    background-color: rgba(140, 140, 255, 0.05);
+}
+
+.link {
+    color: rgb(140, 140, 255);
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.window {
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    display: flex;
+}
+
+.window-content-wrapper {
+    font-family: "base";
+    font-size: 15pt;
+    padding: 35px;
+    width: 100%;
+    max-width: 555px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(35, 35, 45);
+    position: relative;
+}
+
+.window-content-header {
+    margin-bottom: 12px;
+    color: rgb(140, 140, 255);
+}
+
+.hide-window-button {
+    top: 5px;
+    right: 15px;
+    font-size: 20pt;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    cursor: pointer;
+}
+
+.hide-window-button:hover {
+    color: rgb(140, 140, 255);
+}

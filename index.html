@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" href="images/favicon.png">
+    <title>TicketHub</title>
+</head>
+
+<body>
+    <div id="preloader">
+        <div id="spinner"></div>
+    </div>
+
+    <div id="menu-display-toggle-button"></div>
+    <div id="menu" class="hidden">
+
+        <p id="index-page-link" class="link"><a href="index.html"><img src="images/logo.png" alt="Главная"></a></p>
+        <p id="contacts-window-link" class="link">Контакты</p>
+        <p id="about-window-link" class="link">О нас</p>
+
+    </div>
+
+    <input id="tickets-links-search-input-field" placeholder="Поиск">
+
+    <div id="tickets-links"></div>
+
+    <div id="contacts-window" class="hidden window">
+        <div class="window-content-wrapper">
+            <span id="hide-contacts-window-button" class="hide-window-button">&times;</span>
+
+            <h2 class="window-content-header">Контакты</h2>
+            <p>examplemail1@gmail.com</p>
+            <p>examplemail2@gmail.com</p>
+            <p>examplemail3@gmail.com</p>
+            <p>examplemail4@gmail.com</p>
+        </div>
+    </div>
+
+    <div id="about-window" class="hidden window">
+        <div class="window-content-wrapper">
+            <span id="hide-about-window-button" class="hide-window-button">&times;</span>
+
+            <h2 class="window-content-header">О нас</h2>
+            <img src="images/logo.png" alt="">
+            <p>Добро пожаловать в TicketHub — ваш надежный онлайн центр для покупки билетов на самые яркие события!
+               Мы создали TicketHub, чтобы упростить вам доступ к любимым концертам, спортивным матчам,
+               театральным постановкам и другим мероприятиям, которые вдохновляют и оставляют незабываемые впечатления 💜</p>
+            <br>
+            <p>Если у вас есть к нам вопросы, 
+               <span id="from-about-window-to-contacts-window-link" class="link">свяжитесь с нами.</span></p>
+        </div>
+    </div>
+
+    <script type="module" src="scripts/main.js"></script>
+    <script type="module" src="scripts/tickets-links-search.js"></script>
+    <script type="module" src="scripts/tickets-links-render.js"></script>
+</body>
+</html>
