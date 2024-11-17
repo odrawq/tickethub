@@ -19,13 +19,19 @@ else
 
     let ticketName = document.createElement("h1");
     ticketName.textContent = ticketData.name;
+    ticketName.style.margin = "0px 0px 20px 0px";
 
     let ticketDescription = document.createElement("p");
     ticketDescription.textContent = ticketData.description;
 
+    let ticketLocationAndTime = document.createElement("p");
+    ticketLocationAndTime.textContent = `${ticketData.location}, ${ticketData.time}`;
+    ticketLocationAndTime.style.margin = "20px 0px 0px 0px";
+
     ticket.appendChild(ticketImage);
     ticket.appendChild(ticketName);
     ticket.appendChild(ticketDescription);
+    ticket.appendChild(ticketLocationAndTime);
 
     const purchasedTicket = JSON.parse(localStorage.getItem(`ticket_${ticketData.id}`));
 
