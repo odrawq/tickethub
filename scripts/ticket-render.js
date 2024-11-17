@@ -26,7 +26,7 @@ else
 
     let ticketLocationAndTime = document.createElement("p");
     ticketLocationAndTime.textContent = `${ticketData.location}, ${ticketData.time}`;
-    ticketLocationAndTime.style.margin = "20px 0px 0px 0px";
+    ticketLocationAndTime.style.margin = "20px 0px 20px 0px";
 
     ticket.appendChild(ticketImage);
     ticket.appendChild(ticketName);
@@ -38,13 +38,16 @@ else
     if (purchasedTicket)
     {
         let ticketCodeMessage = document.createElement("p");
-        ticketCodeMessage.innerHTML = `<br><h2><span style="color: rgb(0, 255, 0);">Код: </span>${purchasedTicket.code}</h2><p>Предъявите код контроллёру.</p>`;
+        ticketCodeMessage.innerHTML = `<h2><span style="color: rgb(0, 255, 0);">Код: </span>${purchasedTicket.code}</h2><p>Предъявите код контроллёру.</p>`;
         ticket.appendChild(ticketCodeMessage);
     }
     else
     {
+        let ticketPrice = document.createElement("h2");
+        ticketPrice.innerHTML = `<span style="color: rgb(0, 255, 0);">Цена: </span>${ticketData.price} руб.`;
+
         let ticketBuyButton = document.createElement("button");
-        ticketBuyButton.textContent = `${ticketData.price} руб.`;
+        ticketBuyButton.textContent = "Купить";
         ticketBuyButton.classList.add("ticket-buy-button");
 
         ticketBuyButton.addEventListener("click", () =>
@@ -55,14 +58,16 @@ else
                 id: ticketData.id,
                 code: ticketCode
             }));
-            
+
+            ticketPrice.remove();
             ticketBuyButton.remove();
 
             let ticketCodeMessage = document.createElement("p");
-            ticketCodeMessage.innerHTML = `<br><h2><span style="color: rgb(0, 255, 0);">Код: </span>${ticketCode}</h2><p>Предъявите код контроллёру.</p>`;
+            ticketCodeMessage.innerHTML = `<h2><span style="color: rgb(0, 255, 0);">Код: </span>${ticketCode}</h2><p>Предъявите код контроллёру.</p>`;
             ticket.appendChild(ticketCodeMessage);
         });
 
+        ticket.appendChild(ticketPrice);
         ticket.appendChild(ticketBuyButton);
     }
 }
